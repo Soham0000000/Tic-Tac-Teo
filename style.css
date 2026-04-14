@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body.win-active main {
+    filter: blur(5px);
+}
+/* Main Card */
+main {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+/* Game Grid */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Boxes */
+.box {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    font-size: 3rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.box:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+/* X and O colors */
+.box:disabled {
+    cursor: not-allowed;
+}
+
+/* Buttons */
+#reset-btn, #new-btn {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: #00c6ff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#reset-btn:hover, #new-btn:hover {
+    background: #0072ff;
+    transform: scale(1.05);
+}
+
+/* Winner Message */
+.msg-container {
+     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 10;
+}
+
+#msg {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hide {
+    display: none;
+}
